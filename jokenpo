@@ -1,0 +1,74 @@
+import random
+placarUm, placarDois = 0, 0
+
+def jokenpo():
+    global placarUm, placarDois
+    if jogadaUm == 2 and jogadaDois == 1 or jogadaUm == 1 and jogadaDois == 3 or jogadaUm == 3 and jogadaDois == 2:
+        print(f'\n{playerUm} VENCE!')
+        placarUm = placarUm + 1
+    elif jogadaUm == 1 and jogadaDois == 2 or jogadaUm == 3 and jogadaDois == 1 or jogadaUm == 2 and jogadaDois == 3:
+        print(f'\n{playerDois} VENCE!')
+        placarDois = placarDois + 1
+    elif jogadaUm == jogadaDois:
+        print('\nEMPATE!')
+    else:
+        print('JOGADA INVÁLIDA!')
+
+
+def placar(playerUm, placarUm, playerDois, placarDois):
+    print('', playerUm, ':', placarUm, '\n',playerDois, ':', placarDois)
+
+
+def computadorJokenpo():
+    return random.choice([1, 2, 3])
+
+
+
+print('\n[ 1 ] JOGADOR VS JOGADOR')
+print('[ 2 ] JOGADOR VS COMPUTADOR')
+print('[ 3 ] COMPUTADOR VS COMPUTADOR')
+modoJogo = input('\nDigite o número associado ao modo de jogo escolhido: ')
+continuarJogo = True
+
+while continuarJogo:
+    if modoJogo == '1':
+        playerUm = 'Jogador 1'
+        jogadaUm = int(input(f"\n[ 1 ] PEDRA\n[ 2 ] PAPEL\n[ 3 ] TESOURA\n\n{playerUm}, escolha entre as opções: "))
+        print('\n' * 15)
+        playerDois = 'Jogador 2'
+        jogadaDois = int(input(f"\n[ 1 ] PEDRA\n[ 2 ] PAPEL\n[ 3 ] TESOURA\n\n{playerDois}, escolha entre as opções: "))
+        resultado = jokenpo()
+        print(f'\n [PLACAR]')
+        placar(playerUm, placarUm, playerDois, placarDois)
+
+
+    elif modoJogo == '2':
+        playerUm = 'Jogador'
+        jogadaUm = int(input(f"\n[ 1 ] PEDRA\n[ 2 ] PAPEL\n[ 3 ] TESOURA\n\n{playerUm}, escolha entre as opções: "))
+        playerDois = 'Computador'
+        jogadaDois = computadorJokenpo()
+        print(playerDois, 'escolheu :', jogadaDois)
+        resultado = jokenpo()
+        print(f'\n [PLACAR]')
+        placar(playerUm, placarUm, playerDois, placarDois)
+
+    elif modoJogo == '3':
+        print('\n[ 1 ] PEDRA\n[ 2 ] PAPEL\n[ 3 ] TESOURA\n')
+        playerUm = "Computador 1"
+        jogadaUm = computadorJokenpo()
+        print(playerUm, 'escolheu :', jogadaUm)
+        playerDois = "Computador 2"
+        jogadaDois = computadorJokenpo()
+        print(playerDois, 'escolheu :', jogadaDois)
+        resultado = jokenpo()
+        print(f'\n [PLACAR]')
+        placar(playerUm, placarUm, playerDois, placarDois)
+
+    else:
+        print('\nESCOLHA INVÁLIDA!')
+        modoJogo = input('\nDigite o número associado ao modo de jogo escolhido: ')
+
+    continuarJogo = input('\nDeseja jogar novamente? (s/n): ').lower() == 's'
+print(f"\n [PLACAR FINAL]")
+placar(playerUm, placarUm, playerDois, placarDois)
+print(f"\nOBRIGADA POR JOGAR! ୧ʕ•̀ᴥ•́ʔ୨ \nJOKENPÔ POR: Letícia Miniuk")
