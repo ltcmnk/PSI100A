@@ -23,7 +23,6 @@ def computadorJokenpo():
     return random.choice([1, 2, 3])
 
 
-
 print('\n[ 1 ] JOGADOR VS JOGADOR')
 print('[ 2 ] JOGADOR VS COMPUTADOR')
 print('[ 3 ] COMPUTADOR VS COMPUTADOR')
@@ -40,7 +39,6 @@ while continuarJogo:
         resultado = jokenpo()
         print(f'\n [PLACAR]')
         placar(playerUm, placarUm, playerDois, placarDois)
-
 
     elif modoJogo == '2':
         playerUm = 'Jogador'
