@@ -1,6 +1,7 @@
 import random
 placarUm, placarDois = 0, 0
 
+
 def jokenpo():
     global placarUm, placarDois
     if jogadaUm == 2 and jogadaDois == 1 or jogadaUm == 1 and jogadaDois == 3 or jogadaUm == 3 and jogadaDois == 2:
