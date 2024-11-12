@@ -1,0 +1,282 @@
+#1. Elabore um algoritmo que leia um número inteiro e verifique se ele é par ou ímpar.
+
+num = int(input("Digite um número para descobrir se ele é par ou ímpar: "))
+
+if num % 2 == 1:
+    print("O número é ímpar.")
+else:
+    print("O número é par.")
+
+
+
+#2. A partir do ano de nascimento informado pelo usuário, elabore um algoritmo que informe
+#a idade que completará (ou já completou) em 2023. Verifique se ele já pode fazer a carteira
+#de motorista ou não, informando sua situação.
+
+idade = int(input("Digite sua idade em 2023, para saber se já pode fazer carteira de motorista: "))
+
+if idade >= 18:
+    print("Você já pode tirar a carteira!")
+else:
+    print("Você ainda não pode tirar a carteira.")
+
+
+
+#3. Elabore um algoritmo que leia um número inteiro e mostre sua raiz quadrada (informe
+#“Valor inválido” para números negativos).
+
+num = int(input("Digite um número inteiro para obter a sua raíz quadrada: "))
+
+if num > 0:
+    print("A raíz quadrada de", num, "é", num**(1/2))
+else:
+    print("Valor inválido!")
+
+
+
+#4. Um produtor de abóboras deve verificar a classificação dos seus produtos para posterior
+#empacotamento e venda. Um de seus clientes compra apenas abóboras médias (aquelas que
+#possuem o diâmetro (d) no intervalo 15 cm ≤ d < 20 cm). Elabore um algoritmo que leia o
+#diâmetro de uma abóbora e mostre se ela é do tipo médio ou não. Caso ela não se encaixe
+#na classificação, informe “produto fora das medidas”.
+
+diametro=float(input("Digite o valor da abóbora: "))
+
+if 15 <= diametro <= 20:
+    print("A abóbora é do tipo médio.")
+else:
+    print("Produto fora das medidas!")
+
+
+
+#5. Em uma determinada papelaria a fotocópia custa R$ 0,25, caso sejam tiradas menos de 100
+#cópias. A partir de 100 cópias, o valor de cada fotocópia tirada cai para R$ 0,20. Elabore
+#um algoritmo que leia o número de cópias e mostre o valor a pagar pelo serviço.
+
+num=int(input("Digite o número de cópias a serem tiradas, sabendo que até 100 cópias o valor é de R$0.25, e acima, o valor cai para R$0.20 :"))
+
+if num <= 100:
+    print("O valor total de suas cópias é de ", num * 0.25)
+else:
+    print("O valor total de suas cópias é de ", num * 0.2)
+
+
+
+
+#6. Tendo como dados de entrada a altura (h) e o sexo de uma pessoa (use 1 - masculino e 2 -
+#feminino) elabore um algoritmo que calcule o peso ideal (p) do usuário utilizando as
+#seguintes fórmulas:
+#a. para homens: p = (72.7 * h) - 58
+#b. para mulheres: p = (62.1 * h) - 44.7
+
+h = float(input("Digite sua altura em metros: "))
+sexo = int(input("Digite seu sexo, sendo [1] masculine e [2] feminino: "))
+
+if sexo == 1:
+    p = (72.7 * h) - 58
+
+else:
+    p = (62.1 * h) - 44.7
+
+print("O seu peso ideal é de", p, "Kg")
+
+
+
+
+
+#7. O IMC (Índice de Massa Corporal) é calculado através da seguinte fórmula:
+#IMC = massa / altura2
+#Elabore um algoritmo que leia a massa (em quilogramas) e a altura (em metros) do usuário
+#e mostre o valor do IMC e se ele está na faixa considerada “normal” segundo o critério
+#apresentado na tabela da OMS (Organização Mundial de Saúde): 18,5 ≤ IMC< 25. Caso
+#não esteja, calcule sua massa máxima considerada normal (usando IMC igual a 24,9).
+
+kg = float(input("Digite o seu peso em Kg: "))
+h = float(input("Digite a sua altura em metros: "))
+imc = kg/(h*h)
+max = 24.9 * (h * h)
+
+if 18.5<=imc<=25:
+    print("Seu IMC de", imc, "é considerado normal.")
+else:
+    print("Seu IMC de", imc, "não é considerado normal. O peso máximo considerado normal para você seria de", max, "Kg.")
+
+
+
+
+
+#8. Em um determinado estacionamento a primeira hora custa R$ 8,00, que é o valor mínimo
+#praticado. Após uma hora o valor é fracionado, R$ 1,50 a cada 15 minutos. Elabore um
+#algoritmo que leia um número inteiro correspondente a quantidade de minutos usados no
+#estacionamento e mostre a mensagem “Valor mínimo, R$ 8,00” ou “Valor fracionado, R$
+#x”, no qual x será o valor a pagar calculado pelo algoritmo.
+
+min = int(input("Digite a quantidade de minutos estacionados: "))
+
+if min<=60:
+    print("Valor mínimo, R$ 8.00")
+else:
+    print("Valor fracionado, R$", 8 + ((min - 60)/15) * 1.50)
+
+
+
+
+
+#9. A partir da idade informada de uma pessoa, elabore um algoritmo que informe a sua
+#classe eleitoral, sabendo que menores de 16 não votam (não votante), que o voto é
+#obrigatório para adultos entre 18 e 65 anos (eleitor obrigatório) e que o voto é opcional
+#para eleitores entre 16 e 18, ou maiores de 65 anos (eleitor facultativo).
+
+idade = int(input("Digite a sua idade para saber sua classe eleitoral: "))
+
+if idade<16:
+    print("De acordo com a sua idade, a sua classe é de não votante.")
+elif 16>=idade<18 or idade>65:
+    print("De acordo com a sua idade, a sua classe é de eleitor facultativo.")
+else:
+    print("De acordo com a sua idade, a sua classe é de eleitor obrigatório.")
+
+
+
+
+
+#10. O IMC, índice de massa corporal, é calculado através da seguinte fórmula: IMC = massa /
+#altura2
+#Elabore um algoritmo que leia a massa (em quilogramas) e a altura (em metros) do
+#usuário e mostre o valor do IMC e qual sua condição segundo o critério apresentado na
+#tabela da OMS (Organização Mundial de Saúde):
+
+kg = float(input("Digite o seu peso em Kg: "))
+h = float(input("Digite a sua altura em metros: "))
+imc = kg/(h*h)
+
+if imc<18.5:
+    print("Considera-se você abaixo do peso ideal. Seu IMC é:", imc)
+elif 18.5<=imc<25:
+    print("Considera-se você no peso ideal. Seu IMC é:", imc)
+elif 25<=imc<30:
+    print("Considera-se você acima do peso ideal. Seu IMC é:", imc)
+else:
+    print("Considera-se você como obeso(a). Seu IMC é:", imc)
+
+
+
+
+
+#11. Elabore um algoritmo que, dada a idade de um nadador, mostre sua classificação
+#segundo uma das seguintes categorias:
+#• 5 até 7 anos: Infantil A;
+#• 8 até 10 anos: Infantil B;
+#• 11 até 13 anos: Juvenil A;
+#• 14 até 17 anos: Juvenil B;
+#• Maiores de 18 anos: Adulto.
+
+idade = int(input("Digite a sua idade: "))
+
+if 5<=idade<=7:
+    print("Sua classificação é: Infantil A!")
+elif 8<=idade<=10:
+    print("Sua classificação é: Infantil B!")
+elif 11<=idade<=13:
+    print("Sua classificação é: Juvenil A!")
+elif 14<=idade<=17:
+    print("Sua classificação é: Juvenil B!")
+elif idade>=18:
+    print("Sua classificação é: Adulto!")
+else:
+    print("Valor inválido!")
+
+
+
+
+
+#12. A partir das informações contidas na tabela abaixo, elabore um algoritmo que leia a
+#massa em kg de um boxeador e mostre a qual categoria ele pertence. Caso ele não se
+#encaixe, informe “Categoria inferior a Super-médio”. Lembrando que 1 quilograma =
+#2,20462262 libras.
+
+kg = float(input("Digite o seu peso em Kg: "))
+
+if kg>=200.94:
+    print("Sua categoria é Peso-pesado!")
+elif 79.83<=kg<=90.71:
+    print("Sua categoria é Cruzador!")
+elif 76.65<=kg<=79.37:
+    print("Sua categoria é Meio-pesado!")
+elif 73.02<=kg<=76.20:
+    print("Sua categoria é Super-médio!")
+else:
+    print("Categoria inferior a Super-médio.")
+
+
+
+
+
+#13. Em uma determinada loja de eletrodomésticos, os produtos podem ser adquiridos da
+#seguinte forma:
+#Elabore um algoritmo que leia a opção do cliente e o preço de tabela do produto, mostrando
+#então o valor calculado conforme a condição escolhida.
+
+preco = float(input("Digite o preço do produto: "))
+num = int(input("Sendo as opções:\n"
+                "[1] à vista, com 8% de desconto;\n"
+                "[2] em 2 parcelas, com 4% de desconto;\n"
+                "[3] em 3 parcelas;\n"
+                "E [4] em 4 parcelas, com 4% de acréscimo;\n"
+                "Digite a sua opção de pagamento: "))
+
+if num==1:
+    valor = preco - (preco * 0.08)
+elif num==2:
+    valor = preco - (preco*0.04)
+elif num==3:
+    valor = preco
+elif num==4:
+    valor = preco + (preco*0.04)
+else:
+    print("\n\nOpção inválida!")
+
+parcela = valor/num
+print("\nO valor por parcela do produto fica: R$", parcela, "com total de R$", valor)
+
+
+
+
+
+#14. Escreva um algoritmo que leia três números inteiros e mostre o valor do maior deles.
+
+num1 = int(input("Digite o primeiro número inteiro: "))
+num2 = int(input("Digite o segundo número inteiro: "))
+num3 = int(input("Digite o terceiro número inteiro: "))
+
+if num1>num2 and num1>num3:
+    maior = num1
+elif num2>num1 and num2>num3:
+    maior = num2
+elif num3>num1 and num3>num2:
+    maior = num3
+else:
+    print("Os três números tem de ser diferentes.")
+
+print("\nO maior número é o", maior)
+
+
+
+#15.Escreva um algoritmo que leia três números inteiros e mostre-os em ordem decrescente.
+
+n1 = float(input("Escreva um número: "))
+n2 = float(input("Escreva um número: "))
+n3 = float(input("Escreva um número: "))
+
+if n1 >= n2 and n1 >= n3 and n2 >= n3:
+    print("A ordem decrescente é ", n1, n2, n3)
+elif n1 >= n2 and n1 >=n3 and n3 >= n2:
+    print("A ordem decrescente é ", n1, n3, n2)
+elif n2 >= n1 and n2 >= n3 and n1 >= n3:
+    print("A ordem decrescente é ", n2, n1, n3)
+elif n2 >= n1 and n2 >= n3 and n3 >= n1:
+    print("A ordem decrescente é ", n2, n3, n1)
+elif n3 >= n1 and n3 >= n2 and n1 >= n2:
+    print("A ordem decrescente é ", n3, n1, n2)
+elif n3 >= n1 and n3 >= n2 and n2 >= n1:
+    print("A ordem decrescente é ", n3, n2, n1)

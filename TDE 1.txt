@@ -1,0 +1,77 @@
+#1. Faça um algoritmo que leia um número inteiro e escreva seu antecessor e sucessor.
+
+num = float(input("Digite um número inteiro para obter seu antecessor e sucessor: "))
+
+ant = num-1
+suc = num+1
+
+print("O antecessor é",ant,"\nO sucessor é",suc)
+
+
+
+
+#2. Faça um algoritmo que leia o ano de nascimento de uma pessoa e calcule a idade que completará em 2022.
+
+ano = int(input("Digite seu ano de nascimento: "))
+
+idade = 2022 - ano
+
+print("Sua idade no ano de 2022 é: ", idade)
+
+
+
+#3. Faça um algoritmo que receba o salário de um profissional e calcule quantos salário mínimos ele recebe. 1412
+
+salario = float(input("Digite seu salário: "))
+
+minimos = salario/1412
+
+print("Seu salário é equivalente a ",minimos,"salários mínimos")
+
+
+
+#4. Faça um algoritmo que recebe o valor de um produto e calcule os seguintes valores:
+# (1) a vista com 5% de desconto; (2) o valor da parcela em 2x; (3) o valor da parcela em 3x com acréscimo de 5%.
+
+valor = float(input("Digite o valor do produto: "))
+
+vista = valor-(valor*0.05)
+parcela2x = valor/2
+parcela3x = (valor+(valor*0.05))/3
+
+print("O valor por parcela é: \n",vista,"\n",parcela2x,"\n",parcela3x)
+
+
+
+#5. Faça um algoritmo que calcule o consumo médio de um automóvel (medido em km/l),
+#solicitando como entrada a distância total percorrida (KM) e o volume de combustível consumido para percorre-la (litros).
+
+distancia = float(input("Digite a distância percorrida pelo automóvel em KM: "))
+combustivel = float(input("Digite o volume de combustível consumido em L: "))
+
+consumo = distancia/combustivel
+
+print("O consumo do seu veículo é de ",consumo,"km/l")
+
+
+
+#6. Faça um algoritmo que calcule a quantidade de latas de tintas necessárias para pintar um tanque cilindro,
+# em que são fornecidas sua altura e raio, sabendo que:
+#a. A lata de tinta custa R$ 50,00
+#b. Cada lata contém 5 litros
+#c. Cada litro de tinta pinta 3 metros quadrados
+#d. Entrada do programa: altura e raio do cilindro
+#e. Saída: valor em reais e quantidade de latas
+
+altura = float(input("Digite a altura do tanque em metros: "))
+raio = float(input("Digite o raio do tanque em metros: "))
+
+Ab = 3.1415*(raio*raio)
+Al = 2*3.1415*raio*altura
+At = (2*Ab)+Al
+
+litros = At/3
+latas = litros/5
+valor = latas*50
+
+print("\nVocê irá precisar de ",latas,"latas, custando R$",valor)
